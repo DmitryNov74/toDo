@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.block{
+    width: 500px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0,.5);
+    border-radius: 3px;
+    margin-top: 50px;
+    padding: 15px;
+}
+.block_list{
+    margin-bottom: 30px;
+}
+
+.block_list-elem{
+    border-bottom: 0.5px solid rgba(100, 99, 99, 0.4);
+    padding: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.block_list-elem .checked{
+    border-bottom: 0.5px solid rgba(100, 99, 99, 0.4);
+    padding: 10px;
+    margin-bottom: 15px;
+    position: relative;
+    text-decoration: line-through;
+}
+.block_list-delete{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color:gray;
+    box-shadow:0 0 5px rgba(0),0, 0, rgba(0, 0, 0,.5);
+    cursor: pointer;
+    border-radius: 3px;
+    width: 15%;
+    text-align: center;
+    display: block;
+    opacity: 1;
+}
+.block_list-done{
+    position: absolute;
+    color:gray;
+    display: block;
+    right: 0;
+    top: 0;
+
+
+}
+.block_form:after{
+    content:"";
+    display: table;
+    clear: both;
+}
+.block_form-input{
+    float: left;
+    display: block;
+    width: 70%;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    box-shadow:0 0 5px 0 rgba(0, 0, 0,.4);
+    text-indent:10px;
+
+}
+.block_form-btn{
+    display:block;
+    float:right;
+    width: 15%;
+    line-height: 25px;
+    text-align: center;
+    border: none;
+    outline: none;
+    box-shadow:0 0 5px 0 rgba(0, 0, 0,.5);
+    background-color:gray;
+    border-radius:3px;
+    color:white;
+}
