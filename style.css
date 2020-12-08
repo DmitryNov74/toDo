@@ -94,3 +94,7 @@ body{
     margin-left: 20px;
     color:gray;
 }
+
+.hide {
+    display: none;
+}

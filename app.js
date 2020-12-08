@@ -7,31 +7,36 @@ var btnAll = document.getElementById('all');
 var btnCompleted= document.getElementById('completed');
 
 var todos = [];
+var todosShown = [];
+
 var elementId = 0;
 
 function createElements(){
     var newElem = document.createElement("h3");
     newElem.id = elementId;
     elementId += 1;
-
-    todos.append({element:newElem, status:'incomplete'});
+    todos.push({element:newElem, status:'incomplete', show: 'true'});
     var deletSpan = document.createElement("span");
     var doneBox = document.createElement("input");
     doneBox.type = "checkbox";
 
     doneBox.className = "block_list-done";
+    doneBox.id = newElem.id;
     doneBox.addEventListener("change",function(e){
+
         if(e.target.checked){
             alert('checked');
         }else{
             alert('not checked');
         }
         newElem.className = "block_list-elem.checked";
-        
-           
+        var item = todos.find(function(todo) {
+            return todo.element.id === e.target.id
+        })
+        item.status = 'complete';
     });
-    
-    
+
+
     deletSpan.className = "block_list-delete";
     deletSpan.textContent = "X";
     deletSpan.addEventListener("click",function(){
@@ -44,7 +49,6 @@ function createElements(){
     newElem.appendChild(doneBox);
 
     blocklist.appendChild(newElem);
-
 }
 
 btn.addEventListener("click",function(e){
@@ -58,11 +62,10 @@ btn.addEventListener("click",function(e){
 
 btnCompleted.addEventListener('click',function(e){
     e.preventDefault();
-    todos.filter(function(completed){
-        createElements(input.value);
-        input.value = "";
+    todos.forEach(function(todo){
+        if (todo.status !== 'complete') {
+            todo.element.classList.add('hide')
+        }
     });
 });
 
-
-});
