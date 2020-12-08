@@ -11,7 +11,7 @@ body{
     padding: 0 15px;
 }
 .block{
-    width: 500px;
+    width: 700px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0,.5);
     border-radius: 3px;
     margin-top: 50px;
@@ -26,6 +26,7 @@ body{
     padding: 10px;
     margin-bottom: 15px;
     position: relative;
+    text-decoration: none;
 }
 .block_list-elem .checked{
     border-bottom: 0.5px solid rgba(100, 99, 99, 0.4);
@@ -53,9 +54,8 @@ body{
     display: block;
     right: 0;
     top: 0;
-
-
 }
+
 .block_form:after{
     content:"";
     display: table;
@@ -64,12 +64,13 @@ body{
 .block_form-input{
     float: left;
     display: block;
-    width: 70%;
+    width: 50%;
     height: 25px;
     border-radius: 3px;
     border: none;
     box-shadow:0 0 5px 0 rgba(0, 0, 0,.4);
     text-indent:10px;
+    outline: gray;
 
 }
 .block_form-btn{
@@ -84,4 +85,12 @@ body{
     background-color:gray;
     border-radius:3px;
     color:white;
+}
+.low_btn{
+    background-color:white;
+    border:none;
+    outline: gray;
+    display: inline;
+    margin-left: 20px;
+    color:gray;
 }
