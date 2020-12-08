@@ -59,12 +59,13 @@ btn.addEventListener("click",function(e){
     }else{
         alert("Please write your task!");
     }
+});
 
 btnCompleted.addEventListener('click',function(e){
     e.preventDefault();
     todos.forEach(function(todo){
-        if (todo.status !== 'complete') {
-            todo.element.classList.add('hide')
+        if (todo.status === 'incomplete') {
+            todo.element.classList.add('hide');
         }
     });
 });
