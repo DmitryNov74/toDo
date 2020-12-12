@@ -25,15 +25,23 @@ function createElements(){
     doneBox.addEventListener("change",function(e){
 
         if(e.target.checked){
-            alert('checked');
+            //newElem.className = "block_list-elem.checked";
+            newElem.classList.add("don");
+            
+            
+            alert('Completed !');
+
         }else{
-            alert('not checked');
+            //newElem.className = "block_list-elem";
+            newElem.classList.remove("don");
+            alert('Not Completed !');
         }
-        newElem.className = "block_list-elem.checked";
         var item = todos.find(function(todo) {
-            return todo.element.id === e.target.id
-        })
+            return todo.element.id === e.target.id;
+        });
         item.status = 'complete';
+        
+        
     });
 
 
@@ -61,12 +69,41 @@ btn.addEventListener("click",function(e){
     }
 });
 
+
+
+btnAll.addEventListener("click",function(e){
+    e.preventDefault();
+    todos.forEach(function(todo){
+        todo.element.classList.remove('hide');
+
+    });
+    
+});
+
 btnCompleted.addEventListener('click',function(e){
     e.preventDefault();
     todos.forEach(function(todo){
         if (todo.status === 'incomplete') {
             todo.element.classList.add('hide');
+            
+            
         }
+        
+    });
+});
+
+
+
+btnActive.addEventListener("click",function(e){
+    e.preventDefault();
+    todos.forEach(function(todo){
+        if(todo.status === 'complete'){
+            todo.element.classList.add('hide');
+            
+        
+        }
+        
+
     });
 });
 

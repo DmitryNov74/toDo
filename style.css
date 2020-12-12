@@ -28,7 +28,7 @@ body{
     position: relative;
     text-decoration: none;
 }
-.block_list-elem .checked{
+.block_list-elem.checked{
     border-bottom: 0.5px solid rgba(100, 99, 99, 0.4);
     padding: 10px;
     margin-bottom: 15px;
@@ -48,6 +48,8 @@ body{
     display: block;
     opacity: 1;
 }
+
+
 .block_list-done{
     position: absolute;
     color:gray;
@@ -97,4 +99,9 @@ body{
 
 .hide {
     display: none;
+}
+
+.don{
+    text-decoration: line-through solid black;
+    color:rgb(184, 183, 183);
 }
