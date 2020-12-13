@@ -29,12 +29,12 @@ function createElements(){
             newElem.classList.add("don");
 
 
-            // alert('Completed !');
+            alert('Completed !');
 
         }else{
             //newElem.className = "block_list-elem";
             newElem.classList.remove("don");
-            // alert('Not Completed !');
+            alert('Not Completed !');
         }
         var item = todos.find(function(todo) {
             return todo.element.id === e.target.id;
