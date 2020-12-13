@@ -27,8 +27,8 @@ function createElements(){
         if(e.target.checked){
             //newElem.className = "block_list-elem.checked";
             newElem.classList.add("don");
-            
-            
+
+
             alert('Completed !');
 
         }else{
@@ -39,9 +39,11 @@ function createElements(){
         var item = todos.find(function(todo) {
             return todo.element.id === e.target.id;
         });
-        item.status = 'complete';
-        
-        
+        if (item.status === 'complete') {
+            item.status = 'incomplete';
+        } else {
+            item.status = 'complete';
+        }
     });
 
 
@@ -77,7 +79,7 @@ btnAll.addEventListener("click",function(e){
         todo.element.classList.remove('hide');
 
     });
-    
+
 });
 
 btnCompleted.addEventListener('click',function(e){
@@ -85,10 +87,10 @@ btnCompleted.addEventListener('click',function(e){
     todos.forEach(function(todo){
         if (todo.status === 'incomplete') {
             todo.element.classList.add('hide');
-            
-            
+        } else {
+            todo.element.classList.remove('hide');
         }
-        
+
     });
 });
 
@@ -99,10 +101,10 @@ btnActive.addEventListener("click",function(e){
     todos.forEach(function(todo){
         if(todo.status === 'complete'){
             todo.element.classList.add('hide');
-            
-        
+        } else {
+            todo.element.classList.remove('hide');
         }
-        
+
 
     });
 });
